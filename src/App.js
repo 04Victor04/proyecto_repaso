@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from "react-router-dom";
+import uuid from "react-uuid";
+import MenuElements from './data/MenuElements';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router>
+      <nav>
+        <ul>
+          {MenuElements.map((item,index)=>{
+            return( <li key={uuid()}><Link to={item.path}>{item.text}</Link></li>);
+          })}
+        </ul>
+        {MenuElements.map(function creaRoute(item,index){
+            return( <Route path={item.path} key={uuid()} exact={item.defaultRoute}> {item.componentSite}</Route>);
+          })}
+        
+      </nav>
+    </Router>
   );
 }
 
