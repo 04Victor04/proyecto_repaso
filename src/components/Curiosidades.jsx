@@ -1,17 +1,16 @@
 import React from 'react';
 import BootstrapHeader from './BootstrapHeader.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-function AdoptaPerro() {
+function Curiosidades() {
     return (
-      <div>
+        <div>
           <h2>
-           perro
+          curiosidades
           </h2>
           
       </div>
     );
   }
   
-  export default AdoptaPerro;
+  export default Curiosidades;
   

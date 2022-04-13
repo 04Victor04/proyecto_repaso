@@ -1,34 +1,26 @@
 
 import './App.css';
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from "react-router-dom";
-import uuid from "react-uuid";
-import Header from './components/Header.jsx';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { MenuItems } from './data/MenuItems';
 import BootstrapHeader from './components/BootstrapHeader';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
   return (
-
     <Router>
-      <nav>
-        <Header/>
-        <BootstrapHeader/>
-        {/*<ul>
-          {MenuItems.map((item,index)=>{
-            return( <li key={uuid()}><Link to={item.path}>{item.text}</Link></li>);
-          })}
-        </ul>
-        {MenuItems.map(function creaRoute(item,index){
-            return( <Route path={item.path} key={uuid()} exact={item.defaultRoute}> {item.componentSite}</Route>);
-          })}
-        */}
-      </nav>
+      <BootstrapHeader />
+      {MenuItems.map((item) => {
+        return (
+          <Route
+            key={item.id}
+            path={item.path}
+            exact
+            component={item.component}
+          />
+        );
+      })}
     </Router>
   );
 }
