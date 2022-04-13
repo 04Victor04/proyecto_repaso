@@ -7,7 +7,9 @@ import {
   Link
 } from "react-router-dom";
 import uuid from "react-uuid";
-import MenuElements from './data/MenuElements';
+import Header from './components/Header.jsx';
+import BootstrapHeader from './components/BootstrapHeader';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -15,15 +17,17 @@ function App() {
 
     <Router>
       <nav>
-        <ul>
-          {MenuElements.map((item,index)=>{
+        <Header/>
+        <BootstrapHeader/>
+        {/*<ul>
+          {MenuItems.map((item,index)=>{
             return( <li key={uuid()}><Link to={item.path}>{item.text}</Link></li>);
           })}
         </ul>
-        {MenuElements.map(function creaRoute(item,index){
+        {MenuItems.map(function creaRoute(item,index){
             return( <Route path={item.path} key={uuid()} exact={item.defaultRoute}> {item.componentSite}</Route>);
           })}
-        
+        */}
       </nav>
     </Router>
   );
