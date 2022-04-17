@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   return (
+    <div id="fondo">
     <Router>
       <BootstrapHeader />
       {MenuItems.map((item) => {
@@ -22,6 +23,7 @@ function App() {
         );
       })}
     </Router>
+    </div>
   );
 }
 
