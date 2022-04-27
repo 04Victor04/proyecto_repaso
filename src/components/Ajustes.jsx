@@ -8,17 +8,22 @@ function Ajustes() {
           <h2>
            Ajustes
           </h2>
-          <Button variant="outline-dark" size="lg" href="/Perfil">
+          <p class="salto">p</p>
+          <div class="centrado">
+           <Button variant="outline-dark" size="lg" href="/Perfil">
              Perfil
            </Button>
            <br/>
+           <p class="salto">p</p>
            <Button variant="outline-dark" size="lg" href="/QuienesSomos">
              Quienes Somos
            </Button>
            <br/>
+           <p class="salto">p</p>
            <Button variant="outline-dark" size="lg" href="/FAQ">
              Preguntas y Respuestas
            </Button>
+           </div>
       </div>
     );
   }

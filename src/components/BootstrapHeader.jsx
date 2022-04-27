@@ -6,6 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import uuid from "react-uuid";
+import logo from '../assets/imagenes/Captura1.PNG';
 import  {MenuItems}  from '../data/MenuItems';
 import '../css/BootstrapHeader.css'
 
@@ -17,8 +18,9 @@ class BootstrapHeader extends React.Component {
   render() {
     return (<Navbar bg="light" expand={false}>
     <Container fluid>
-      <Navbar.Brand >Adopta tu Mascota</Navbar.Brand>
-      <img id="img" src="https://www.zarla.com/images/zarla-nanny-can-1x1-2400x2400-20211020-3cx7cpbpy36bmc9gwj6h.png?crop=1:1,smart&width=250&dpr=2" width="70px" align="left"></img>
+      
+      <Navbar.Brand ><img id="img" src={logo} width="70px" ></img>Adopta tu Mascota</Navbar.Brand>
+      
       <Navbar.Toggle aria-controls="offcanvasNavbar" />
       <Navbar.Offcanvas
         id="offcanvasNavbar"
@@ -35,9 +37,7 @@ class BootstrapHeader extends React.Component {
             return( <li key={uuid()}><br></br><Link to={item.path}>{item.text}</Link><br></br></li>);
           })}
         </ul>
-        {MenuItems.map(function creaRoute(item,index){
-            return( <Route path={item.path} key={uuid()} exact={item.defaultRoute}> {item.componentSite}</Route>);
-          })}
+        
           </Nav>
           
         </Offcanvas.Body>
