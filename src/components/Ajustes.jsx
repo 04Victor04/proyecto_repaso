@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button} from 'react-bootstrap';
 import "../css/ajustes.css";
+import MenuAjustes from '../data/MenuAjustes.js';
 function Ajustes() {
     return (
         <div>
@@ -10,8 +11,8 @@ function Ajustes() {
           </h2>
           <p class="salto">p</p>
           <div class="centrado">
-           <Button variant="outline-dark" size="lg" href="/Perfil">
-             Perfil
+           <Button variant="outline-dark" size="lg" >
+             Perfil<Link to="FAQ"></Link>
            </Button>
            <br/>
            <p class="salto">p</p>
