@@ -12,7 +12,7 @@ function Ajustes() {
           <p class="salto">p</p>
           <div class="centrado">
            <Button variant="outline-dark" size="lg" >
-             Perfil<Link to="FAQ"></Link>
+             Perfil
            </Button>
            <br/>
            <p class="salto">p</p>
