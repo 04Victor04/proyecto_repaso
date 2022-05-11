@@ -10,11 +10,11 @@ class AdoptaPerro extends React.Component {
     };
   }
   async componentDidMount() {
-    fetch('https://v2.jokeapi.dev/joke/Any?lang=es&type=twopart&amount=3')
+    fetch('https://www.zaragoza.es/sede/servicio/proteccion-animal/;jsessionid=bTayp2DEwHoTt7nqQVozbqP49Z2P-So5YxRvjKATOIM79DmCQEDa!1906617833?title=&especie=Canina&tamagno=&sexo=')
       .then((response) => response.json())
       .then((data) =>
         this.setState({
-          Perros: data.jokes,
+          Perros: data.perros,
         })
       );
   }
@@ -22,9 +22,14 @@ render(){
     return (
       <div>
           <h2>
-           perro
+           Perros
           </h2>
-          
+          {/*{data.map(dog => {
+            return (
+                <p>{dog.nombre}</p>
+                <p>{dog.foto}</p>
+            );
+          })}*/}
       </div>
     );
   }
