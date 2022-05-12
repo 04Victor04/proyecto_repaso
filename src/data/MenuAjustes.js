@@ -1,6 +1,6 @@
 import FAQ from '../components/ajustes/FAQ';
 import Perfil from '../components/ajustes/Perfil';
-import QuienesSomos from '../components/ajustes/QuienesSomos';
+import QuienesSomos from '../components/QuienesSomos';
 
 export const MenuAjustes=[
     {

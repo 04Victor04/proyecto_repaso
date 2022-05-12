@@ -6,15 +6,29 @@ class AdoptaPerro extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Perros: [],
+      perros: [],
     };
   }
   async componentDidMount() {
-    fetch('https://www.zaragoza.es/sede/servicio/proteccion-animal/;jsessionid=bTayp2DEwHoTt7nqQVozbqP49Z2P-So5YxRvjKATOIM79DmCQEDa!1906617833?title=&especie=Canina&tamagno=&sexo=')
-      .then((response) => response.json())
-      .then((data) =>
+    
+    var myHeaders = new Headers();
+    myHeaders.set('Content-Type', 'application/json')
+    var myInit = { method: 'GET',
+                   headers: myHeaders,
+                   mode: 'cors',
+                   cache: 'default' };
+    
+    var myRequest = new Request('https://cors-anywhere.herokuapp.com/https://www.zaragoza.es/sede/servicio/proteccion-animal?rf=html&especie=Canina&start=0&rows=50', myInit);
+
+
+    fetch(myRequest)
+      .then((response) => {
+        console.log(response);
+        response.json();
+      })
+      .then((data) => 
         this.setState({
-          Perros: data.perros,
+          perros: data.result,
         })
       );
   }
@@ -24,12 +38,13 @@ render(){
           <h2>
            Perros
           </h2>
-          {/*{data.map(dog => {
+          <p>{this.state.perros.map(dog => {
             return (
-                <p>{dog.nombre}</p>
-                <p>{dog.foto}</p>
+                <p>{dog.title} {dog.raza}</p>
+                
             );
-          })}*/}
+          })}
+          </p>
       </div>
     );
   }
