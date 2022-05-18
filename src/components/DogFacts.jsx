@@ -6,7 +6,7 @@ function DogFacts() {
     fetchFact()
     }
   const fetchFact = () => {
-    fetch("https://dog-facts-api.herokuapp.com/api/v1/resources/dogs?number=1")
+    fetch("cors-anywhere.herokuapp.com/https://dog-facts-api.herokuapp.com/api/v1/resources/dogs?number=1")
       .then((response) => response.json())
       .then((data) => setFact(data.fact));
   }
