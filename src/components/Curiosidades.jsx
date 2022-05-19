@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DogFacts from "./DogFacts.jsx";
 
 function Curiosidades() {
   const [fact, setFact] = useState("");
@@ -28,7 +27,7 @@ function Curiosidades() {
     </div>
     <br/>
     <div className="App">
-      <DogFacts/>
+      
     </div>
     </div>
   );
