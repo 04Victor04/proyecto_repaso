@@ -1,12 +1,10 @@
 import React from 'react';
-import BootstrapHeader from './BootstrapHeader.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Client } from "@petfinder/petfinder-js";
 
 class AdoptaPerro extends React.Component {
   constructor(props) {
     super(props);
-    
   }
   async componentDidMount() {
     const client = new Client({apiKey: "YA7fufQkwD9aLGVMX3Qv7dlZTFzdpgTMvIJe1gjeuAfkdrIsiL", secret: "qkf1q0n0ZQBm5tlnotmFoxn2MOj0PRH0fOzwDwoQ"});
@@ -15,15 +13,25 @@ class AdoptaPerro extends React.Component {
     animales.map((animal)=>{
       console.log("Tipo "+ animal.type+", Nombre "+animal.name+", Edad " +animal.age+", Photos "+animal.photos);
     })
-
+{/*GET https://api.petfinder.com/v2/types/Dog*/}
   }
+
+  
+
 render(){
     return (
       <div>
           <h2>
            Perros
           </h2>
-          <p></p>
+          {/*<img
+              onClick={this.handleClick}
+              key={photo.value}
+              src={photo.value}
+              className={index === active ? "active" : ""}
+              alt="animal thumbnail"
+              data-index={index}
+          />*/}
       </div>
     );
   }

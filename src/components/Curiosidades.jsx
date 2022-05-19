@@ -1,5 +1,4 @@
 import React from 'react';
-import BootstrapHeader from './BootstrapHeader.jsx';
 import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DogFacts from "./DogFacts.jsx";

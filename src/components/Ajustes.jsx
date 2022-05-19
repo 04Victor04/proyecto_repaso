@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import "../css/ajustes.css";
 import { Link } from 'react-router-dom';
-import MenuAjustes from '../data/MenuAjustes.js';
 function Ajustes() {
   return (
     <div>

@@ -2,9 +2,6 @@ import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Offcanvas} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import {
-  Route
-} from "react-router-dom";
 import uuid from "react-uuid";
 import logo from '../assets/imagenes/Captura1.PNG';
 import  {MenuItems}  from '../data/MenuItems';
