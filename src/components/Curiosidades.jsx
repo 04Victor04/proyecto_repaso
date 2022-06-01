@@ -18,17 +18,15 @@ function Curiosidades() {
   return (
     <div>
     <div  className="App">
-      <h2>Facts de gatos</h2>
+      <h3>Facts de gatos</h3>
       <hr />
       <h6>{fact}</h6>
       <hr />
       <button onClick= {() => handleClick()}>Fact nuevo</button>
          
     </div>
-    <br/>
-    <div className="App">
-      
-    </div>
+  
+    
     </div>
   );
 }

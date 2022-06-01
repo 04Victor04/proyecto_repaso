@@ -1,36 +1,50 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState, useEffect } from 'react';
+import Select from './Select';
+import Card from './Card';
+import getDog from '../helpers/getDog';
+import Error from './Error';
 
-class Home extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      Gatos: [],
-    };
-  }
-  async componentDidMount() {
-    fetch('https://cataas.com/api/cats?tags=cute')
-      .then((response) => response.json())
-      .then((data) =>
-        this.setState({
-          Gatos: data.cute,
-        })
-      );
-  }
-  render(){
-    return (
-      <div>
-          <h2>
-           img
-          </h2>
-          {/*{data.map(cutes => {
-            return (
-                
-            );
-          })}*/}
-      </div>
-    );
+const initialDog = {
+  image: "",
+  breed: {
+    id: 0,
+    name: ""
   }
 }
+
+function Home() {
+  const [dog, setDog] = useState(initialDog);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    updateDog();
+  }, []);
+
+  const updateDog = (breedId) => {
+    setLoading(true);
+    getDog(breedId)
+      .then((newDog) => {
+        setDog(newDog);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setError("Error al cargar un perro")
+        setLoading(false);
+      })
+  }
+  
+  return (
+    <div className="app">
+      <Select updateDog={updateDog}/>
+      
+      { error && <Error error={error} /> }
+
+      <Card dog={dog} updateDog={updateDog} loading={loading}/>
+    </div>
+  );
+}
+
   
   export default Home;

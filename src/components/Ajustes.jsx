@@ -14,7 +14,7 @@ function Ajustes() {
       
       <div class="centrado">
         <nav>
-        {MenuAjustes.map((item) => {
+        {MenuAjustes.map((item, index) => {
           return (<li> <Button variant="outline-info" size="lg" key={uuid()}> <Link to={item.path}>{item.text}</Link></Button><p class="salto">p</p></li>);
         })}
         </nav>

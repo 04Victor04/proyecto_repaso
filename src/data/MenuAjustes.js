@@ -7,21 +7,21 @@ export const MenuAjustes=[
         id:1,
         path:"/Perfil",
         text: "Perfil",
-        component: Perfil,
+        componentSite: Perfil,
     
     },
     {
         id:2,
         path:"/QuienesSomos",
         text: "QuienesSomos",
-        component: QuienesSomos,
+        component: <QuienesSomos/>,
     
     },
     {
         id:3,
         path:"/FAQ",
         text: "FAQ",
-        component: FAQ,
+        componentSite: <FAQ/>,
     
     },
 ];
