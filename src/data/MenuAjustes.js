@@ -1,27 +1,27 @@
-import FAQ from '../components/FAQ';
-import Perfil from '../components/Perfil';
-import QuienesSomos from '../components/QuienesSomos';
+import FAQ from '../components/FAQ.jsx';
+import Perfil from '../components/Perfil.jsx';
+import QuienesSomos from '../components/QuienesSomos.jsx';
 
 export const MenuAjustes=[
     {
         id:1,
-        path:"/FAQ",
-        text: "FAQ",
-        component: <FAQ/>,
+        path:"/Perfil",
+        text: "Perfil",
+        component: Perfil,
     
     },
     {
         id:2,
-        path:"/Perfil",
-        text: "Perfil",
-        componentSite: <Perfil/>,
+        path:"/QuienesSomos",
+        text: "QuienesSomos",
+        component: QuienesSomos,
     
     },
     {
         id:3,
-        path:"/QuienesSomos",
-        text: "QuienesSomos",
-        componentSite: <QuienesSomos/>,
+        path:"/FAQ",
+        text: "FAQ",
+        component: FAQ,
     
-    }
+    },
 ];

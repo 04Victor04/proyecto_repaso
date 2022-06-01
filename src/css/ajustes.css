@@ -1,5 +1,6 @@
 .btn{
     width: 50%!important;
+    color: white;
   }
   div.centrado{
     text-align: center;
@@ -8,3 +9,10 @@
     font-size: xx-large;
     color:white;
   }
+  h2{
+    font-size: 500%;
+    padding-left: 5%;
+    padding-top: 1.5%;
+    padding-bottom: 2%;
+  }
+  

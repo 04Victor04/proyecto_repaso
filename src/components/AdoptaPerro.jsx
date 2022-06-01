@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Client } from "@petfinder/petfinder-js";
 import Card from 'react-bootstrap/Card';
 import logo from '../assets/imagenes/Captura1.PNG';
+import "../css/Adoptar.css";
 class AdoptaPerro extends React.Component {
   constructor(props) {
     super(props);
@@ -45,12 +46,12 @@ class AdoptaPerro extends React.Component {
         {this.state.animales.map((animal,index) => {
           console.log("Indice: " + index + "foto: " + this.state.fotos[index]);
           return (
-            <Card>
-              <Card.Img variant="bottom" src={this.state.fotos[index]} />
+            <Card border="info">
               <Card.Body>
-                <Card.Text>{animal.name}
-                </Card.Text>
+                <Card.Title >{animal.name}
+                </Card.Title>
               </Card.Body>
+              <Card.Img  src={logo} /*src={this.state.fotos[index]}*/ />
             </Card>
           )
         })}

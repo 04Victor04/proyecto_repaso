@@ -1,35 +1,62 @@
 import React from 'react';
-import BootstrapHeader from './BootstrapHeader.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Client } from "@petfinder/petfinder-js";
+import Card from 'react-bootstrap/Card';
+import logo from '../assets/imagenes/Captura1.PNG';
+import "../css/Adoptar.css";
 class AdoptaGato extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {
-      Perros: [],
-    };
+    this.state = { 
+      animales: [], 
+      fotos: [] };
   }
   async componentDidMount() {
-    fetch('https://www.zaragoza.es/sede/servicio/proteccion-animal/;jsessionid=bTayp2DEwHoTt7nqQVozbqP49Z2P-So5YxRvjKATOIM79DmCQEDa!1906617833?title=&especie=Felina&tamagno=&sexo=')
-      .then((response) => response.json())
-      .then((data) =>
-        this.setState({
-          Perros: data.perros,
-        })
-      );
+    const client = new Client({ apiKey: "YA7fufQkwD9aLGVMX3Qv7dlZTFzdpgTMvIJe1gjeuAfkdrIsiL", secret: "qkf1q0n0ZQBm5tlnotmFoxn2MOj0PRH0fOzwDwoQ" });
+    const response = await client.animal.search(
+      {type:"Cat"}
+    );
+    this.setState({ animales: response.data.animals });
+    let nuevasFotos = [];
+    this.state.animales.map((animal) => {
+      //console.log("Tipo " + animal.type + ", Nombre " + animal.name + ", Edad " + animal.age);
+      if (animal.photos !== undefined) {
+        //animal.photos.map((item) => {if (item !== undefined) console.log("Fotos: " + JSON.stringify(item))});
+        console.log("foto - " + JSON.stringify(animal.photos[0]));
+        nuevasFotos.push(animal.photos[0]);
+      } else {
+        console.log("No hay fotos");
+        nuevasFotos.push(logo);
+      }
+      
+    }
+    )
+    this.setState({fotos: nuevasFotos});
+    {/*GET https://api.petfinder.com/v2/types/Dog*/}
   }
-render(){
+
+
+
+  render() {
     return (
       <div>
-          <h2>
-           gatos
-          </h2>
-          {/*{data.map(dog => {
-            return (
-                <p>{dog.nombre}</p>
-                <p>{dog.foto}</p>
-            );
-          })}*/}
+        <h2>
+          Gatos
+        </h2>
+        {this.state.animales.map((animal,index) => {
+          console.log("Indice: " + index + "foto: " + this.state.fotos[index]);
+          return (
+            <Card border="info">
+            <Card.Body>
+              <Card.Title >{animal.name}
+              </Card.Title>
+            </Card.Body>
+            <Card.Img  src={logo} /*src={this.state.fotos[index]}*/ />
+          </Card>
+        
+          )
+        })}
+
       </div>
     );
   }
