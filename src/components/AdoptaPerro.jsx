@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Client } from "@petfinder/petfinder-js";
 import Card from 'react-bootstrap/Card';
-import logo from '../assets/imagenes/Captura1.PNG';
+import perro from '../assets/imagenes/perro.jpg';
 import "../css/Adoptar.css";
 class AdoptaPerro extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class AdoptaPerro extends React.Component {
         nuevasFotos.push(animal.photos[0]);
       } else {
         console.log("No hay fotos");
-        nuevasFotos.push(logo);
+        nuevasFotos.push(perro);
       }
       
     }
@@ -51,7 +51,7 @@ class AdoptaPerro extends React.Component {
                 <Card.Title >{animal.name}
                 </Card.Title>
               </Card.Body>
-              <Card.Img  src={logo} /*src={this.state.fotos[index]}*/ />
+              <Card.Img  src={perro} /*src={this.state.fotos[index]}*/ />
             </Card>
           )
         })}

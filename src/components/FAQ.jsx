@@ -6,7 +6,7 @@ export default class FAQ extends React.Component {
 
 
   return(
-      <p>FAQ</p>
+      <h2>FAQ</h2>
 
   );
   }

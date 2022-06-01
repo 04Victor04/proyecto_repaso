@@ -1,0 +1,8 @@
+.nav-expanded {
+    flex-direction: row !important;
+  }
+  
+  .navlink-expanded {
+    padding-right: 2em !important;
+  }
+  

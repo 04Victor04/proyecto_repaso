@@ -8,36 +8,42 @@ export const MenuItems=[
     {
         id:1,
         path:"/Home",
+        defaultRoute:false,
         text: "Imágenes",
-        component: Home,
+        componentSite: <Home/>,
     
     },
     {
         id:2,
         path:"/AdoptaPerro",
+        defaultRoute:false,
         text: "Adopta Perro",
-        component: AdoptaPerro,
+        componentSite: <AdoptaPerro/>,
     
     },
     {
         id:3,
         path:"/AdoptaGato",
+        defaultRoute:false,
         text: "Adopta Gato",
-        component: AdoptaGato,
+        componentSite: <AdoptaGato/>,
     
     },{
         id:4,
         path:"/Curiosidades",
+        defaultRoute:false,
         text: "Curiosidades",
-        component: Curiosidades,
+        componentSite: <Curiosidades/>,
     
     },
     {
         id:5,
         path:"/Ajustes",
+        defaultRoute:false,
         text: "Ajustes",
-        component: Ajustes,
+        componentSite: <Ajustes/>,
     
     },
     
 ];
+export default MenuItems;

@@ -1,13 +1,13 @@
 import React from 'react'
 import Spinner from './Spinner';
 
-const Card = ({ dog, loading, updateDog }) => {
+const Cardperro = ({ dog, loading, updateDog }) => {
 
     if(loading) return <Spinner />
 
     return (
-        <div className="card bounce" onClick={() => updateDog(dog.breed.id)}>
-            <img 
+        <div className="cardperro bounce" onClick={() => updateDog(dog.breed.id)}>
+            <img className="perros"
                 src={dog.image}
                 alt="dog"
                 width="30%"
@@ -19,4 +19,4 @@ const Card = ({ dog, loading, updateDog }) => {
     )
 }
 
-export default Card
+export default Cardperro
