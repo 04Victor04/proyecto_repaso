@@ -12,6 +12,7 @@ class Boton extends React.Component {
       <Button
         variant="info"
         type="button"
+        size="lg"
         onClick={() => this.onClickButton()}
       >
         {this.text}

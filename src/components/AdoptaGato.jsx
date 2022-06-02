@@ -21,7 +21,7 @@ class AdoptaGato extends React.Component{
     let nuevasFotos = [];
     response.data.animals.map((animal) => {
       //console.log("Tipo " + animal.type + ", Nombre " + animal.name + ", Edad " + animal.age);
-      if (animal.photos !== undefined) {
+      if (animal.photos !== undefined && animal.photos[0] !== undefined) {
         //animal.photos.map((item) => {if (item !== undefined) console.log("Fotos: " + JSON.stringify(item))});
         //console.log("fotos - " + JSON.stringify(animal.photos[0]));
         //console.log("foto pequeña - " + JSON.stringify(animal.photos[0]["medium"]));

@@ -22,8 +22,8 @@ export default function Login(){
   }
 
   return (
-    <>
-     <h1>Inicio de sesión</h1>
+    <div>
+     
      <img src={logo}></img>
       <Container>
         <Form>
@@ -39,6 +39,7 @@ export default function Login(){
           <Boton text="Login" onClickButton={logUser} />
         </Form>
       </Container>
-    </>
+    
+    </div>
   );
 }
