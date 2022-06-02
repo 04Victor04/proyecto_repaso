@@ -12,18 +12,21 @@ import MenuItems from './data/MenuItems';
 import Home from './components/Home';
 import Login from './components/Login';
 import BootstrapHeader from './components/BootstrapHeader';
+import AdoptaGato from './components/AdoptaGato';
+import Ajustes from './components/Ajustes';
 
 function App() {
 
   return (
     <div id="fondo">
-     <Router>
-     <BootstrapHeader/>
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <Route path="/home" component={Home} />
-      </Switch>
-    </Router>
+      <Router>
+        <Switch>
+          {MenuItems.map((item, index) => {
+            return (<Route exact={item.defaultRoute} path={item.path}>{item.componentSite}</Route>);
+          })}
+         
+        </Switch>
+      </Router>
     </div>
   );
 }

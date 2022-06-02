@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom';
 import uuid from "react-uuid";
 import logo from '../assets/imagenes/Captura1.PNG';
 import { MenuItems } from '../data/MenuItems';
+import Boton from './Boton';
 import '../css/BootstrapHeader.css'
 
 class BootstrapHeader extends React.Component {
   constructor(props) {
     super(props);
   }
+  
 
   render() {
     return (
@@ -32,8 +34,10 @@ class BootstrapHeader extends React.Component {
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <ul>
                   {MenuItems.map((item, index) => {
-                    return (<li key={uuid()}><br></br><Link to={item.path}>{item.text}</Link><br></br></li>);
-                  })}
+                    if (!item.defaultRoute) {
+                      return (<li key={uuid()}><br></br><Link to={item.path}>{item.text}</Link><br></br></li>);
+                    }
+                    })}
                 </ul>
               </Nav>
             </Offcanvas.Body>

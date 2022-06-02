@@ -5,21 +5,24 @@ import QuienesSomos from '../components/QuienesSomos.jsx';
 export const MenuAjustes=[
     {
         id:1,
-        path:"/Perfil",
+        defaultRoute: false,
+        path:"Perfil",
         text: "Perfil",
-        componentSite: Perfil,
+        componentSite: <Perfil/>,
     
     },
     {
         id:2,
-        path:"/QuienesSomos",
+        defaultRoute: false,
+        path:"QuienesSomos",
         text: "QuienesSomos",
-        component: <QuienesSomos/>,
+        componentSite: <QuienesSomos/>,
     
     },
     {
         id:3,
-        path:"/FAQ",
+        defaultRoute:false,
+        path:"FAQ",
         text: "FAQ",
         componentSite: <FAQ/>,
     

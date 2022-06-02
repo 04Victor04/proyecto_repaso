@@ -1,24 +1,38 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch, Link, useRouteMatch 
+} from "react-router-dom";
+import { Button, Container, Row, Col } from 'react-bootstrap';
 import "../css/ajustes.css";
-import { Link } from 'react-router-dom';
 import uuid from 'react-uuid';
 import { MenuAjustes } from '../data/MenuAjustes';
+import BootstrapHeader from './BootstrapHeader';
 function Ajustes() {
+  const {path, url} = useRouteMatch();
   return (
     <div>
+      
+      <BootstrapHeader/>
       <h2>
         Ajustes
       </h2>
       
       <div class="centrado">
-        <nav>
+        <Container>
+        <Row>
         {MenuAjustes.map((item, index) => {
-          return (<li> <Button variant="outline-info" size="lg" key={uuid()}> <Link to={item.path}>{item.text}</Link></Button><p class="salto">p</p></li>);
+          return ( <Col variant="outline-info" size="lg" key={uuid()} > <Link to={`${url}/${item.path}`}>{item.text}</Link></Col>);
         })}
-        </nav>
-        
+        </Row>
+        </Container>
+        <Switch>
+          {MenuAjustes.map((item, index) => {
+            return (<Route path={`${path}/${item.path}`} >{item.componentSite}</Route>);
+          })}
+        </Switch>
       </div>
     </div>
   );

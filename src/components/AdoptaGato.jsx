@@ -4,6 +4,7 @@ import { Client } from "@petfinder/petfinder-js";
 import Card from 'react-bootstrap/Card';
 import gato from '../assets/imagenes/gato.jpg';
 import "../css/Adoptar.css";
+import BootstrapHeader from './BootstrapHeader';
 class AdoptaGato extends React.Component{
   constructor(props) {
     super(props);
@@ -16,22 +17,27 @@ class AdoptaGato extends React.Component{
     const response = await client.animal.search(
       {type:"Cat"}
     );
-    this.setState({ animales: response.data.animals });
+
     let nuevasFotos = [];
-    this.state.animales.map((animal) => {
+    response.data.animals.map((animal) => {
       //console.log("Tipo " + animal.type + ", Nombre " + animal.name + ", Edad " + animal.age);
       if (animal.photos !== undefined) {
         //animal.photos.map((item) => {if (item !== undefined) console.log("Fotos: " + JSON.stringify(item))});
-        console.log("foto - " + JSON.stringify(animal.photos[0]));
-        nuevasFotos.push(animal.photos[0]);
+        //console.log("fotos - " + JSON.stringify(animal.photos[0]));
+        //console.log("foto pequeña - " + JSON.stringify(animal.photos[0]["medium"]));
+        nuevasFotos.push(animal.photos[0]["medium"]);
       } else {
         console.log("No hay fotos");
         nuevasFotos.push(gato);
       }
       
     }
-    )
-    this.setState({fotos: nuevasFotos});
+    );
+    this.setState({ 
+      animales: response.data.animals, 
+      fotos: nuevasFotos
+    });
+    this.setState({});
     {/*GET https://api.petfinder.com/v2/types/Dog*/}
   }
 
@@ -40,6 +46,8 @@ class AdoptaGato extends React.Component{
   render() {
     return (
       <div>
+        
+      <BootstrapHeader/>
         <h2>
           Gatos
         </h2>
@@ -47,13 +55,12 @@ class AdoptaGato extends React.Component{
           console.log("Indice: " + index + "foto: " + this.state.fotos[index]);
           return (
             <Card border="info">
-            <Card.Body>
-              <Card.Title >{animal.name}
-              </Card.Title>
-            </Card.Body>
-            <Card.Img  src={gato} /*src={this.state.fotos[index]}*/ />
-          </Card>
-        
+              <Card.Body>
+                <Card.Title >{animal.name}
+                </Card.Title>
+              </Card.Body>
+              <Card.Img src={this.state.fotos[index]} /*src={gato}*/ />
+            </Card>
           )
         })}
 
@@ -61,5 +68,4 @@ class AdoptaGato extends React.Component{
     );
   }
 }
-  export default AdoptaGato;
-  
+export default AdoptaGato;

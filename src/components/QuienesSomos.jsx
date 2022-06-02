@@ -5,9 +5,9 @@ function QuienesSomos() {
     return (
       <div>
         
-          <h2>
+          <h5>
            QuienesSomos
-          </h2>
+          </h5>
           
       </div>
     );

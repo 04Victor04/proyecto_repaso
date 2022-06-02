@@ -3,10 +3,14 @@ import React from 'react';
 function Perfil() {
     return (
       <div>
-        
-          <h2>
+        <br/>
+          <h4>
            Perfil
-          </h2>
+          </h4>
+
+
+
+
           
       </div>
     );

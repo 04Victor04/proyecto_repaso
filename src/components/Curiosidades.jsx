@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import BootstrapHeader from './BootstrapHeader';
 
 function Curiosidades() {
   const [fact, setFact] = useState("");
@@ -17,6 +18,8 @@ function Curiosidades() {
   }, []);
   return (
     <div>
+      
+      <BootstrapHeader/>
     <div  className="App">
       <h3>Facts de gatos</h3>
       <hr />

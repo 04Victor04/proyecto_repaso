@@ -5,6 +5,7 @@ import getDog from '../helpers/getDog';
 import Error from '../homejs/Error';
 import '../css/Spinner.css';
 import '../css/home.css';
+import BootstrapHeader from './BootstrapHeader';
 
 const initialDog = {
   image: "",
@@ -38,13 +39,18 @@ function Home() {
   }
   
   return (
+    <div>
+      <BootstrapHeader/>
+    
     <div className="home-center">
+      
       <h2>Imagenes</h2>
       <Select updateDog={updateDog}/>
       
       { error && <Error error={error} /> }
 
       <Cardperro dog={dog} updateDog={updateDog} loading={loading}/>
+    </div>
     </div>
   );
 }
