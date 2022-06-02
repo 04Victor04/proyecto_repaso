@@ -24,7 +24,7 @@ export default function Login(){
   return (
     <div>
      
-     <img src={logo}></img>
+     <img id="imglogin" src={logo}></img>
       <Container>
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
