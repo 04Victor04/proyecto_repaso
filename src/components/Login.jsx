@@ -3,6 +3,7 @@ import Boton from './Boton';
 import { Container,Form } from 'react-bootstrap'
 import { useHistory } from "react-router-dom";
 import { Users } from "../data/Users";
+import logo from '../assets/imagenes/Captura1.PNG';
 
 export default function Login(){
   
@@ -23,14 +24,12 @@ export default function Login(){
   return (
     <>
      <h1>Inicio de sesión</h1>
+     <img src={logo}></img>
       <Container>
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Nombre de usuario: </Form.Label>
             <Form.Control ref={nameInput} type="text" placeholder="Usuario" />
-            <Form.Text className="text-muted">
-               Su email no será compartido con nadie
-            </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Contraseña: </Form.Label>

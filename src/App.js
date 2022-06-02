@@ -17,10 +17,8 @@ function App() {
 
   return (
     <div id="fondo">
-      <nav>
-        <BootstrapHeader/>
-      </nav>
      <Router>
+     <BootstrapHeader/>
       <Switch>
         <Route exact path="/" component={Login} />
         <Route path="/home" component={Home} />
