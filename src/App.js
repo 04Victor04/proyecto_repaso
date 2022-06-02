@@ -21,15 +21,10 @@ function App() {
         <BootstrapHeader/>
       </nav>
      <Router>
-        {MenuItems.map(function showRoutes(item){
-        return (<Route path={item.path} key={uuid()} exact={item.defaultRoute}>{item.componentSite}</Route>);
-      })}
-
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route path="/home" component={Home} />
-        </Switch>
-
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route path="/home" component={Home} />
+      </Switch>
     </Router>
     </div>
   );

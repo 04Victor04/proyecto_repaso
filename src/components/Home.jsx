@@ -5,8 +5,6 @@ import getDog from '../helpers/getDog';
 import Error from '../homejs/Error';
 import '../css/Spinner.css';
 import '../css/home.css';
-import { Route, Switch, useRouteMatch } from "react-router-dom";
-import Navigation from "./Navigation";
 
 const initialDog = {
   image: "",
@@ -17,8 +15,6 @@ const initialDog = {
 }
 
 function Home() {
-  const { path, url } = useRouteMatch();
-  const loggedIn =localStorage.getItem("loggedIn")
   const [dog, setDog] = useState(initialDog);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -42,11 +38,7 @@ function Home() {
   }
   
   return (
-    
     <div className="home-center">
-     
-        <Navigation authorized={loggedIn} baseUrl={url} />
-      
       <h2>Imagenes</h2>
       <Select updateDog={updateDog}/>
       

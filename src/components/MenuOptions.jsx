@@ -2,13 +2,13 @@ import React from "react";
 import uuid from "react-uuid";
 import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { PaginasApp } from "./PaginasApp";
+import  MenuItems  from "../data/MenuItems";
 
 
 export default function MenuOptions(props) {
   return (
     <>
-      {PaginasApp.map((item) => {
+      {MenuItems.map((item) => {
         return (
           <Nav.Link
             className="navlink-expanded"

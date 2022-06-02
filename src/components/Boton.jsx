@@ -10,7 +10,7 @@ class Boton extends React.Component {
   render() {
     return (
       <Button
-        variant="primary"
+        variant="info"
         type="button"
         onClick={() => this.onClickButton()}
       >

@@ -36,9 +36,7 @@ export default function Login(){
             <Form.Label>Contraseña: </Form.Label>
             <Form.Control ref={pwdInput} type="password" placeholder="Contraseña" />
             </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Mantén la sesión iniciada" />
-          </Form.Group>
+          
           <Boton text="Login" onClickButton={logUser} />
         </Form>
       </Container>
