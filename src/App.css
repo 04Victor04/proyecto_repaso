@@ -5,6 +5,7 @@
 .fondo{
   background-color: rgba(211, 211, 211, 0.664)!important;
   align-items: center;
+  align-content: center;
 }
 .App-logo {
   height: 40vmin;
