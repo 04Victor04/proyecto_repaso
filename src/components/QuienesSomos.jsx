@@ -6,9 +6,7 @@ function QuienesSomos() {
   return (
     <div class="faqdiv">
 
-      <h4>
-        QuienesSomos
-      </h4>
+      
       <strong>QUIÉNES SOMOS</strong>
       <p>
 
